@@ -23,51 +23,6 @@
     --border-button: rgba(0, 0, 0, 0.1);
 }
 
-/** Modal */
-
-.webstudio-modal-overlay {
-    width: 100%;
-    height: 100%;
-    background: var(--modal-overlay);
-    position: fixed;
-    z-index: 1;
-}
-
-.webstudio-modal-window {
-    width: 408px;
-    height: 576px;
-    background: var(--White);
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
-                0px 1px 3px rgba(0, 0, 0, 0.12), 
-                0px 2px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    display: block;
-    margin: 88px auto;
-}
-
-.webstudio-modal-window-close-button {
-    background: var(--Accent);
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    border: 1px solid var(--border-button);
-    position: relative;
-    left: 360px;
-    top: 24px;
-    cursor: pointer;
-}
-
-.webstudio-modal-window-icon {
-    width: 8px;
-    height: 8px;
-    margin-left: 7px;
-}
-
-.is-hidden {
-    visibility: hidden;
-    pointer-events: auto;
-    opacity: 1;
-}
 
 /*Header*/
 
@@ -161,6 +116,7 @@
 .webstudio-header-menu-link:is(:hover, :focus) {
     color: var(--Pressed-state);
     cursor: pointer;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .webstudio-header-contant-list-item:last-child {
@@ -202,6 +158,7 @@
 .webstudio-header-contant-list-link:is(:hover, :focus) {
     color: var(--Pressed-state);
     cursor: pointer;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .webstudio-header-contant-list-item:first-child {
@@ -263,6 +220,69 @@
 .webstudio-service-button:is(:hover, :focus) {
     background: var(--Pressed-state);
     cursor: pointer;
+}
+
+/** Modal Effective Solutions for Your Business*/
+
+.webstudio-modal-overlay {
+    width: 100%;
+    height: 100%;
+    background: var(--modal-overlay);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: opacity 250ms linear, visibility 250ms linear;
+}
+
+.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.webstudio-modal-window {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 408px;
+    height: 576px;
+    background: var(--White);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
+                0px 1px 3px rgba(0, 0, 0, 0.12),
+                0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    display: block;
+    margin: 88px auto;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 0.25s linear;
+}
+
+.webstudio-modal-overlay.is-hidden .webstudio-modal-window {
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.webstudio-modal-window-close-button {
+    background: var(--Accent);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid var(--border-button);
+    position: relative;
+    left: 360px;
+    top: 24px;
+    cursor: pointer;
+    transition: 0.25s linear;
+}
+
+.webstudio-modal-window-icon {
+    width: 8px;
+    height: 8px;
+    margin-left: 7px;
+}
+
+.webstudio-modal-window-close-button:is(:hover, :focus) {
+    background: var(--Cloud);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*Services*/
@@ -449,6 +469,7 @@
     width: 40px;
     height: 40px;
     padding: 12px;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .webstudio-our-team-cards-employee-social-media-list:first-child {
@@ -462,6 +483,7 @@
 .webstudio-our-team-cards-employee-social-media-list:is(:hover, :focus) {
     background: var(--Pressed-state);
     cursor: pointer;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Our Customers */
@@ -504,10 +526,12 @@
 .webstudio-our-customers-list-item-icon:is(:hover, :focus) {
     fill: var(--Pressed-state);
     cursor: pointer;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .webstudio-our-customers-list-item:hover {
     border: 1px solid var(--Pressed-state);
+    cursor: pointer;
 }
 
 .webstudio-our-customers-list-item:first-child {
@@ -555,6 +579,7 @@
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
         0px 2px 1px rgba(0, 0, 0, 0.08),
         0px 2px 2px rgba(0, 0, 0, 0.12);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .webstudio-services-style-buttons-items:first-child {
@@ -622,11 +647,12 @@
     margin-bottom: 0px;
 }
 
-.webstudio-filter-portfolio-jobs-cards-items:hover {
+.webstudio-filter-portfolio-jobs-cards-items:is(:hover, :focus)  {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
                 0px 1px 1px rgba(46, 47, 66, 0.16),
                 0px 2px 1px rgba(46, 47, 66, 0.08);
                 cursor: pointer;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .webstudio-filter-portfolio-jobs-cards-items-overlay-container {
@@ -660,6 +686,7 @@
 
 .webstudio-filter-portfolio-jobs-cards-items:is(:hover, :focus) .webstudio-filter-portfolio-jobs-cards-items-overlay {
     transform: translate(0%, 0%);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*Footer*/
@@ -783,4 +810,5 @@
 .webstudio-footer-social-media-list-item:is(:hover, :focus) {
     cursor: pointer;
     background: var(--Success);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }

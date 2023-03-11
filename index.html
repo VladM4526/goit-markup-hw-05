@@ -10,15 +10,6 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="webstudio-modal-overlay is-hidden">
-        <div class="webstudio-modal-window">
-            <div class="webstudio-modal-window-close-button" >
-                <svg class="webstudio-modal-window-icon" data-modal-close>
-                    <use href="./images/close-button-svg.svg#icon-close-button" width="8"></use>
-                </svg>
-            </div>
-        </div>
-    </div>
     <header class="webstudio-header">
         <div class="webstudio-header-container">
             <nav class="webstudio-nav">
@@ -46,6 +37,15 @@
             <div class="webstudio-service-container" >
                 <h1 class="webstudio-service-text">Effective Solutions for Your Business</h1>
                 <button class="webstudio-service-button" type="button" data-modal-open>Order Service</button>
+                <div class="webstudio-modal-overlay is-hidden" data-modal>
+                    <div class="webstudio-modal-window">
+                        <div class="webstudio-modal-window-close-button" data-modal-close>
+                            <svg class="webstudio-modal-window-icon">
+                                <use href="./images/close-button-svg.svg#icon-close-button" width="8"></use>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
             <section class="webstudio-services">
@@ -348,7 +348,7 @@
             </div>
         </div>
     </footer>
-    <script src="./js/script.js"></script>
+    <script src="./js/modal.js"></script>
 </body>
 
 </html>
