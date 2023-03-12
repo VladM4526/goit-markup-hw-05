@@ -489,6 +489,12 @@
 
 /* Our Customers */
 
+.webstudio-our-customers {
+    width: 1128px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .webstudio-our-customers-container {
     margin-bottom: 120px;
 }
@@ -510,7 +516,7 @@
 
 .webstudio-our-customers-list-item {
     width: 168px;
-    height: 88px;
+    padding: 16px 32px;
     border: 1px solid var(--Subtle-Text);
     border-radius: 4px;
     display: flex;
@@ -533,6 +539,7 @@
 .webstudio-our-customers-list-item:hover {
     border: 1px solid var(--Pressed-state);
     cursor: pointer;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .webstudio-our-customers-list-item:first-child {
