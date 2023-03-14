@@ -540,13 +540,13 @@
     transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.webstudio-our-customers-list-item-icon:is(:hover, :focus) {
+.webstudio-our-customers-list-item:is(:hover, :focus) .webstudio-our-customers-list-item-icon {
     fill: var(--Pressed-state);
     cursor: pointer;
     transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.webstudio-our-customers-list-item:hover {
+.webstudio-our-customers-list-item:is(:hover, :focus) {
     border: 1px solid var(--Pressed-state);
     cursor: pointer;
     transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
